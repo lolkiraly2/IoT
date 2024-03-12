@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\DeviceResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\DeviceResource\RelationManagers;
+use Illuminate\Contracts\View\View;
 
 class DeviceResource extends Resource
 {
@@ -105,6 +106,11 @@ class DeviceResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                
+                Tables\Actions\Action::make('QR')->label(__('fields.qr_code'))
+                    ->modalContent(fn ($record): View => view('filament.resources.device-resource.pages.q-r-device', ['record' => $record]))
+                    ->modalSubmitAction(false)
+                    ->modalCancelAction(false)
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -130,6 +136,7 @@ class DeviceResource extends Resource
             'create' => Pages\CreateDevice::route('/create'),
             'view' => Pages\ViewDevice::route('/{record}'),
             'edit' => Pages\EditDevice::route('/{record}/edit'),
+            'qr' => Pages\QRDevice::route('/qr/{record}'),
         ];
     }
 
