@@ -2,6 +2,10 @@
 
 return [
 
+    'column_toggle' => [
+        'heading' => 'Oszlopok',
+      ],
+
     'columns' => [
 
         'text' => [

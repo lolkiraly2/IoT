@@ -19,7 +19,7 @@ class DeviceTypeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
 
-    
+
 
     public static function getPages(): array
     {
@@ -77,8 +77,23 @@ class DeviceTypeResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\DevicesRelationManager::class,
         ];
     }
-}
+    public static function getNavigationGroup(): string
+    {
+        return __('module_names.navigation_groups.administration');
+    }
 
+    public static function getModelLabel(): string
+    {
+        return __('module_names.device_types.label');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('module_names.device_types.plural_label');
+    }
+
+    
+}
