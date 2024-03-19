@@ -16,13 +16,17 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\DeviceResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\DeviceResource\RelationManagers;
+use Filament\Resources\RelationManagers\RelationManager;
 use Illuminate\Contracts\View\View;
+
 
 class DeviceResource extends Resource
 {
     protected static ?string $model = Device::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-wrench';
+
+    protected static ?int $navigationSort = 2;
 
     public static function getNavigationGroup(): string
     {
@@ -125,7 +129,7 @@ class DeviceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\DocumentsRelationManager::class
         ];
     }
 

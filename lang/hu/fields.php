@@ -17,4 +17,5 @@ return [
   'inactive' => 'Inaktív',
   'all' => 'Mind',
   'qr_code' => 'qr kód',
+  'attachment' => 'Csatolmány'
 ];

@@ -19,7 +19,7 @@ class DeviceTypeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
 
-
+    protected static ?int $navigationSort = 1;
 
     public static function getPages(): array
     {
