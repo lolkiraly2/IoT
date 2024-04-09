@@ -17,5 +17,10 @@ return [
   'inactive' => 'Inaktív',
   'all' => 'Mind',
   'qr_code' => 'qr kód',
-  'attachment' => 'Csatolmány'
+  'attachment' => 'Csatolmány',
+
+  'email' => 'E-mail',
+  'password' => 'Jelszó',
+  'new_password' => "Új jelszó"
+
 ];

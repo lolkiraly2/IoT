@@ -13,4 +13,7 @@ return [
     'no' => 'No',
     'inactive' => 'Inactive',
     'all' => 'All',
+    'email' => 'E-mail',
+    'password' => 'Password',
+    'new_password' => 'New password'
 ];
