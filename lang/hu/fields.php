@@ -21,6 +21,8 @@ return [
 
   'email' => 'E-mail',
   'password' => 'Jelszó',
-  'new_password' => "Új jelszó"
+  'new_password' => "Új jelszó",
+
+  'deleted_at' => "Törölve ekkor"
 
 ];

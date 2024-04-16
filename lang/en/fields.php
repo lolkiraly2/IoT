@@ -15,5 +15,6 @@ return [
     'all' => 'All',
     'email' => 'E-mail',
     'password' => 'Password',
-    'new_password' => 'New password'
+    'new_password' => 'New password',
+    'deleted_at' => "Deleted at"
 ];

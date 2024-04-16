@@ -80,35 +80,36 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                Tables\Columns\TextColumn::make('name')->label(__('fields.name'))
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')->label(__('fields.email'))
                     ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('roles.name')->label(__('module_names.roles.plural_label'))
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')->label(__('fields.created_at'))
+                    ->dateTime('Y-m-d H:i')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('deleted_at')->label(__('fields.deleted_at'))
+                    ->dateTime('Y-m-d H:i')
+                    ->sortable()
+                    ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable(),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\RestoreAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                    Tables\Actions\ForceDeleteBulkAction::make(),
                     Tables\Actions\RestoreBulkAction::make(),
                 ]),
             ])

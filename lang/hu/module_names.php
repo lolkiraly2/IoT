@@ -34,4 +34,8 @@ return [
     'label' => 'Felhasználó',
     'plural_label' => 'Felhasználók',
   ],
+
+  'widgets' => [
+    'usersbyroles' => "Felhasználók szerepkörönként"
+  ]
 ];
