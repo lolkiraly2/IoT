@@ -32,5 +32,10 @@ return [
 
   'widgets' => [
     'usersbyroles' => "Users by roles"
+  ],
+
+  'worksheets' => [
+    'label' => 'Worksheet',
+    'plural_label' => 'Worksheets',
   ]
 ];

@@ -3,7 +3,8 @@
 return [
   'navigation_groups' => [
     'administration' => 'Adminisztráció',
-    'maintenance' => 'Karbantartás'
+    'maintenance' => 'Karbantartás',
+    'failure_report' => 'Hiba bejelentés'
   ],
   'device_types' => [
     'label' => 'Berendezés típus',
@@ -37,5 +38,10 @@ return [
 
   'widgets' => [
     'usersbyroles' => "Felhasználók szerepkörönként"
+  ],
+
+  'worksheets' => [
+    'label' => 'Munkalap',
+    'plural_label' => 'Munkalapok',
   ]
 ];
